@@ -6,4 +6,8 @@
         SELECT * FROM user
     </select>
 
+    <update id="updateUsername">
+        UPDATE user SET username = #{username} WHERE id = #{id}
+    </update>
+
 </mapper>

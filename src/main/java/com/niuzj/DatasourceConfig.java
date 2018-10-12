@@ -57,8 +57,8 @@ public class DatasourceConfig {
         try {
             SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
             sqlSessionFactoryBean.setDataSource(dynamicSource());
-            sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("classpath:configuration.xml"));
-            sqlSessionFactoryBean.setMapperLocations(new ClassPathResource[]{new ClassPathResource("classpath:mybatis/*.xml")});
+            sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("configuration.xml"));
+            sqlSessionFactoryBean.setMapperLocations(new ClassPathResource[]{new ClassPathResource("mybatis/user.xml")});
             return sqlSessionFactoryBean.getObject();
         } catch (Exception e) {
             logger.error("", e);
