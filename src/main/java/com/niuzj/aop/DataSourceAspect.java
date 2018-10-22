@@ -1,5 +1,6 @@
 package com.niuzj.aop;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.niuzj.model.DataSourceManage;
 import com.niuzj.model.DataSourceName;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -7,13 +8,16 @@ import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
 @Aspect
 @Component
-public class DataSourceAspect {
+public class DataSourceAspect{
 
     @Around("execution(* com.niuzj.service.*.*(..))")
     public Object changeDataSource(ProceedingJoinPoint proceed) throws Throwable {
@@ -32,4 +36,5 @@ public class DataSourceAspect {
         DataSourceManage.clear();
         return obj;
     }
+
 }
