@@ -67,10 +67,10 @@ public class DatasourceConfig {
     }
 
     //sqlSessionTemplate模板
-    @Bean
-    public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory){
-        return new SqlSessionTemplate(sqlSessionFactory);
-    }
+//    @Bean
+//    public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory){
+//        return new SqlSessionTemplate(sqlSessionFactory);
+//    }
 
     //平台事务管理器
     @Bean
